@@ -1,0 +1,23 @@
+version: "3"
+services:
+  c1w1_server:
+    container_name: c1w1
+    build:
+      context: .
+    cap_add:
+      - sys_nice
+    image: anaconda_base
+    ports:
+      - 8888:8888
+    volumes:
+      - .:/home
+    environment:
+      JUPYTER_TOKEN: "docker"
+    devices:
+      - /dev:/dev
+    # network_mode: host
+    entrypoint: [ "bash", "-c", "sleep infinity" ]
+
+# volumes:
+#   my_volume:
+#     external: true

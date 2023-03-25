@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: tf-serving
-        image: tensorflow/serving
+        # image: tensorflow/serving
+        image: emacski/tensorflow-serving
         envFrom:
         - configMapRef:
             name: tfserving-configs
